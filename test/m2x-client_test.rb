@@ -473,7 +473,7 @@ assert 'M2X::Client::Device#read_metadata' do
   result = { owners:'first' }
   res = MockSocket.mock!(
     [:get, "/v2/devices/#{device['id']}/metadata"],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     device.read_metadata
   }
@@ -482,7 +482,6 @@ assert 'M2X::Client::Device#read_metadata' do
   assert_equal res.status,   202
   assert_equal res.success?, true
   assert_equal res.json,  JSON.parse(JSON.generate(result))
-
 end
 
 assert 'M2X::Client::Device#read_metadata_field' do
@@ -494,7 +493,7 @@ assert 'M2X::Client::Device#read_metadata_field' do
 
   res = MockSocket.mock!(
     [:get, "/v2/devices/#{device['id']}/metadata/#{field_name}"],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     device.read_metadata_field(field_name)
   }
@@ -514,7 +513,7 @@ assert 'M2X::Client::Device#update_metadata' do
 
   res = MockSocket.mock!(
     [:put, "/v2/devices/#{device['id']}/metadata", json:params],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     device.update_metadata(params)
   }
@@ -535,7 +534,7 @@ assert 'M2X::Client::Device#update_metadata_field' do
 
   res = MockSocket.mock!(
     [:put, "/v2/devices/#{device['id']}/metadata/#{field_name}", json:params],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     device.update_metadata_field(field_name,params[:value])
   }
@@ -554,7 +553,7 @@ assert 'M2X::Client::Distribution#read_metadata' do
 
   res = MockSocket.mock!(
     [:get, "/v2/distributions/#{distributions['id']}/metadata"],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     distributions.read_metadata
   }
@@ -574,7 +573,7 @@ assert 'M2X::Client::Distribution#read_metadata_field' do
 
   res = MockSocket.mock!(
     [:get, "/v2/distributions/#{distributions['id']}/metadata/#{field_name}"],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     distributions.read_metadata_field(field_name)
   }
@@ -594,7 +593,7 @@ assert 'M2X::Client::Distribution#update_metadata' do
 
   res = MockSocket.mock!(
     [:put, "/v2/distributions/#{distributions['id']}/metadata", json:params],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     distributions.update_metadata(params)
   }
@@ -615,7 +614,7 @@ assert 'M2X::Client::Distribution#update_metadata_field' do
 
   res = MockSocket.mock!(
     [:put, "/v2/distributions/#{distributions['id']}/metadata/#{field_name}", json:params],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     distributions.update_metadata_field(field_name,params[:value])
   }
@@ -634,7 +633,7 @@ assert 'M2X::Client::Collection#read_metadata' do
 
   res = MockSocket.mock!(
     [:get, "/v2/collections/#{collections['id']}/metadata"],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     collections.read_metadata
   }
@@ -654,7 +653,7 @@ assert 'M2X::Client::Collection#read_metadata_field' do
 
   res = MockSocket.mock!(
     [:get, "/v2/collections/#{collections['id']}/metadata/#{field_name}"],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     collections.read_metadata_field(field_name)
   }
@@ -674,7 +673,7 @@ assert 'M2X::Client::Collection#update_metadata' do
 
   res = MockSocket.mock!(
     [:put, "/v2/collections/#{collections['id']}/metadata", json:params],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     collections.update_metadata(params)
   }
@@ -695,7 +694,7 @@ assert 'M2X::Client::Collection#update_metadata_field' do
 
   res = MockSocket.mock!(
     [:put, "/v2/collections/#{collections['id']}/metadata/#{field_name}", json:params],
-    ['202 OK', json:result ]
+    ['202 OK', json:result]
   ) {
     collections.update_metadata_field(field_name,params[:value])
   }

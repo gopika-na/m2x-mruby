@@ -42,5 +42,4 @@ class M2X::Client::Collection < M2X::Client::Resource
   def metadata_path
     "#{path}/metadata"
   end
-  
 end

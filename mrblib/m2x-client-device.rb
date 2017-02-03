@@ -79,5 +79,4 @@ class M2X::Client::Device < M2X::Client::Resource
   def metadata_path
     "#{path}/metadata"
   end
-
 end
